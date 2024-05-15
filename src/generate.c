@@ -4,7 +4,7 @@
 #include <time.h>         // for seeding (srand)
 #include <limits.h>
 
-int *createEmptyList(int numberOfIntegers) {
+int *_createEmptyList(int numberOfIntegers) {
   return malloc(sizeof(int) * numberOfIntegers);
 }
 
@@ -19,7 +19,7 @@ int *generateUnboundedNumberOfIntegers(int numberOfIntegers) {
   int *list; 
   int iterator;
 
-  list = createEmptyList(numberOfIntegers);
+  list = _createEmptyList(numberOfIntegers);
   if (!list) return NULL;
 
   for (iterator = 0; iterator < numberOfIntegers; iterator++)
@@ -33,7 +33,7 @@ int *generateUpperBoundedNumberOfIntegers(int numberOfIntegers, int bound) {
   int iterator;
   int randomNumber;
 
-  list = createEmptyList(numberOfIntegers);
+  list = _createEmptyList(numberOfIntegers);
   if (!list) return NULL;
 
   for (iterator = 0; iterator < numberOfIntegers; iterator++) {
@@ -54,7 +54,7 @@ int *generateLowerBoundedNumberOfIntegers(int numberOfIntegers, int bound) {
   int iterator;
   int randomNumber;
 
-  list = createEmptyList(numberOfIntegers);
+  list = _createEmptyList(numberOfIntegers);
   if (!list) return NULL;
 
   for (iterator = 0; iterator < numberOfIntegers; iterator++) {
