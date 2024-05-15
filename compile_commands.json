@@ -1,0 +1,17 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Isrc/headers",
+      "-O0",
+      "-Wall",
+      "-o",
+      "build/debug/bsdata",
+      "src/bsdata.c"
+    ],
+    "directory": "/home/drew/Documents/Projects/bsdata",
+    "file": "/home/drew/Documents/Projects/bsdata/src/bsdata.c",
+    "output": "/home/drew/Documents/Projects/bsdata/build/debug/bsdata"
+  }
+]
