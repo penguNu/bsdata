@@ -2,7 +2,9 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
+/* ERROR HANDLING */
 void throw(void (*printer)(void*), ...) {
   va_list ap;
 
@@ -27,4 +29,33 @@ void missingArgumentError(char *arg) {
 void invalidDataTypeFlagError(byte dataTypeSelected) {
   printf("Internal error: invalid data type flag is selected.\n");
   printf("Value of data type flag: 0x%x\n", dataTypeSelected);
+}
+
+/* HELP SCREEN */
+
+void _printEmptyLine() {
+  printf("\n");
+}
+
+void _printStrln(char *text) {
+  printf("%s\n", text);
+}
+
+void _printSection(char *name) {
+  printf("  %s\n", name);
+}
+
+void _printOption(char *option, char *description) {
+  printf("    %-30s \t%s\n", option, description);
+}
+
+void help() {
+  printf("Usage: bsdata [OPTIONS...]\n\n");
+
+  _printOption("-h, --help,", "prints this help screen");
+  _printEmptyLine();
+
+  /* general options */
+  _printSection("General options");
+  _printOption("-l, --length NUMBER,", "generate a data set with size of NUMBER");
 }

@@ -9,4 +9,6 @@ void notImplementedError();
 void missingArgumentError(char*);
 void invalidDataTypeFlagError(byte);
 
+void help();
+
 #endif

@@ -12,5 +12,6 @@ extern void throw(void (*printerFunction)(void*), ...);
 extern void notImplementedError();
 extern void missingArgumentError(char*);
 extern void invalidDataTypeFlagError(byte);
+extern void help();
 
 #endif
