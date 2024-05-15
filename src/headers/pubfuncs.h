@@ -8,5 +8,9 @@ extern int *generateUpperBoundedNumberOfIntegers(int numberOfIntegers, int bound
 extern int *generateLowerBoundedNumberOfIntegers(int numberOfIntegers, int bound);
 extern int *generateBoundedNumberOfIntegers(int numberOfIntegers, int lowerBound, int upperBound);
 extern void printIntegerList(int *list, int length);
+extern void throw(void (*printerFunction)(void*), ...);
+extern void notImplementedError();
+extern void missingArgumentError(char*);
+extern void invalidDataTypeFlagError(byte);
 
 #endif
