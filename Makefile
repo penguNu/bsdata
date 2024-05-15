@@ -7,7 +7,7 @@ BUILD_DIR ?= build
 
 # local variables
 headers = src/headers
-sources = src/*.c
+sources = src/*.c src/generate/*.c src/output/*.c
 
 default: build
 

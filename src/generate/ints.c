@@ -1,25 +1,11 @@
 #include "generate.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <time.h>         // for seeding (srand)
-#include <limits.h>
-
-int *_createEmptyList(int numberOfIntegers) {
-  return malloc(sizeof(int) * numberOfIntegers);
-}
-
-void initializeGenerator() {
-#ifndef GENERATOR_INITIALIZED
-#define GENERATOR_INITIALIZED
-  srand(time(NULL));
-#endif
-}
 
 int *generateUnboundedNumberOfIntegers(int numberOfIntegers) { 
   int *list; 
   int iterator;
 
-  list = _createEmptyList(numberOfIntegers);
+  list = createEmptyList(numberOfIntegers);
   if (!list) return NULL;
 
   for (iterator = 0; iterator < numberOfIntegers; iterator++)
@@ -33,7 +19,7 @@ int *generateUpperBoundedNumberOfIntegers(int numberOfIntegers, int bound) {
   int iterator;
   int randomNumber;
 
-  list = _createEmptyList(numberOfIntegers);
+  list = createEmptyList(numberOfIntegers);
   if (!list) return NULL;
 
   for (iterator = 0; iterator < numberOfIntegers; iterator++) {
@@ -54,7 +40,7 @@ int *generateLowerBoundedNumberOfIntegers(int numberOfIntegers, int bound) {
   int iterator;
   int randomNumber;
 
-  list = _createEmptyList(numberOfIntegers);
+  list = createEmptyList(numberOfIntegers);
   if (!list) return NULL;
 
   for (iterator = 0; iterator < numberOfIntegers; iterator++) {
