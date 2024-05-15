@@ -9,6 +9,7 @@ int main(int argc, char** argv) {
   initializeGenerator();
 
   listOfRandomNumbers = generateUnboundedNumberOfIntegers(numberOfRandomNumbers);
+  if (!listOfRandomNumbers) return 1;
 
   printIntegerList(listOfRandomNumbers, numberOfRandomNumbers);
 
