@@ -17,7 +17,6 @@ clean:
 
 build: 
 	mkdir -p $(BUILD_DIR)/debug
-	echo $(sources)
 	$(COMPILER) -I$(headers) $(OPTIMIZATION) -Wall -o $(BUILD_DIR)/debug/bsdata $(sources)
 
 
@@ -29,3 +28,5 @@ release: clean
 test: build
 	# No tests currently exist. Contributions for tests would be appreciated.
 
+run: build
+	./$(BUILD_DIR)/debug/bsdata $(ARGS)
