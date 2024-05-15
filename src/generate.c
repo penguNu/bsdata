@@ -9,7 +9,10 @@ int *createEmptyList(int numberOfIntegers) {
 }
 
 void initializeGenerator() {
+#ifndef GENERATOR_INITIALIZED
+#define GENERATOR_INITIALIZED
   srand(time(NULL));
+#endif
 }
 
 int *generateUnboundedNumberOfIntegers(int numberOfIntegers) { 
