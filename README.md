@@ -8,9 +8,9 @@ This project is written in C and uses `make` as its build system.
 
 ### Prerequisites
 
-Before building the project, ensure you have `gcc`, `clang`, or any other C compiler installed on your system. You 
-can set a specific compiler by exporting the `COMPILER` environment variable, otherwise `make` will use the default 
-compiler (`cc`).
+Before building the project, ensure you have `gcc`, `clang`, or any other C compiler installed on your system, along 
+with any libc of your choice. You can set a specific compiler by exporting the `COMPILER` environment variable, 
+otherwise `make` will use the default compiler (`cc`).
 
 ### Building the Project
 
@@ -37,7 +37,7 @@ make release
 This will clean any previous builds and compile bsdata into the `build/release` directory using the `-O3` optimization 
 level. Only the default compiler warnings will be displayed.
 
-### Cleaning the Build Directories
+### Cleaning the Build Directory
 
 To clean up the build directories, you can use:
 ```bash
