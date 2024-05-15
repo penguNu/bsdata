@@ -12,9 +12,10 @@ void parseArgs(int argc, char **argv) {
   int listLength = DEFAULT_LIST_LENGTH; // unless specified in args, generate list of default length
 
   for (iterator = 1; iterator < argc; iterator++) {
-    /* help */
+    /* print help */
     if (strcmp(argv[iterator], "-h") == 0 || strcmp(argv[iterator], "--help") == 0) {
-      throw(notImplementedError);
+      help();
+      return;
     }
 
     /* specify length of generated list */
