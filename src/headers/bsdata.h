@@ -1,6 +1,7 @@
 #ifndef BSDATA_H_INCLUDED
 #define BSDATA_H_INCLUDED
 
+#include "shared.h"
 #include "pubfuncs.h"
 
 /* TYPE DEFINITIONS */
