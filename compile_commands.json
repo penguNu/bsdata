@@ -13,5 +13,35 @@
     "directory": "/home/drew/Documents/Projects/bsdata",
     "file": "/home/drew/Documents/Projects/bsdata/src/bsdata.c",
     "output": "/home/drew/Documents/Projects/bsdata/build/debug/bsdata"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Isrc/headers",
+      "-O0",
+      "-Wall",
+      "-o",
+      "build/debug/bsdata",
+      "src/generate.c"
+    ],
+    "directory": "/home/drew/Documents/Projects/bsdata",
+    "file": "/home/drew/Documents/Projects/bsdata/src/generate.c",
+    "output": "/home/drew/Documents/Projects/bsdata/build/debug/bsdata"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Isrc/headers",
+      "-O0",
+      "-Wall",
+      "-o",
+      "build/debug/bsdata",
+      "src/output.c"
+    ],
+    "directory": "/home/drew/Documents/Projects/bsdata",
+    "file": "/home/drew/Documents/Projects/bsdata/src/output.c",
+    "output": "/home/drew/Documents/Projects/bsdata/build/debug/bsdata"
   }
 ]
