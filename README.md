@@ -28,7 +28,7 @@ otherwise `make` will use the default compiler (`cc`).
 
 This will compile the sources into the `build/debug` directory with no optimizations and all warnings enabled.
 
-### Running the Build
+### Building and Running
 
 To have the project build and immediately run the built binary afterwards, you can run:
 ```bash
