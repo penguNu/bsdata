@@ -17,11 +17,12 @@ startPoint := 5
 endPoint := $(shell echo $$(( $(pubfuncsLength) - 2 )))
 
 refreshPublicFunctionList: 
-	sed -i "$(startPoint),$(endPoint)d" $(headers)/pubfuncs.h
-	sed -i "$(startPoint)i\\$(headerFunctions)" $(headers)/pubfuncs.h
-	sed -i "$(startPoint)s/^/extern /g" $(headers)/pubfuncs.h
-	sed -i "$(startPoint)s/; /;\nextern /g" $(headers)/pubfuncs.h
-	sed -i "/^extern $$/d" $(headers)/pubfuncs.h
+	@echo "Refreshing public function list..."
+	@sed -i "$(startPoint),$(endPoint)d" $(headers)/pubfuncs.h
+	@sed -i "$(startPoint)i\\$(headerFunctions)" $(headers)/pubfuncs.h
+	@sed -i "$(startPoint)s/^/extern /g" $(headers)/pubfuncs.h
+	@sed -i "$(startPoint)s/; /;\nextern /g" $(headers)/pubfuncs.h
+	@sed -i "/^extern $$/d" $(headers)/pubfuncs.h
 
 build: refreshPublicFunctionList
 	mkdir -p $(BUILD_DIR)/debug
@@ -40,4 +41,5 @@ test: build
 	# No tests currently exist. Contributions for tests would be appreciated.
 
 run: build
+	@echo "=================="
 	./$(BUILD_DIR)/debug/bsdata $(ARGS)
