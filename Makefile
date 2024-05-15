@@ -32,7 +32,7 @@ clean:
 	rm -f $(BUILD_DIR)/release/*
 
 # release ignores the OPTIMIZATION env variable and compiles with -O3.
-release: clean refreshFunctionList
+release: clean refreshPublicFunctionList
 	mkdir -p $(BUILD_DIR)/release
 	$(COMPILER) -I$(headers) -O3 -o $(BUILD_DIR)/release/bsdata $(sources)
 
