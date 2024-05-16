@@ -16,6 +16,23 @@ int validateStringIsInt(char *str) {
   return 1;
 }
 
+int validateStringIsFloat(char *str) {
+  byte decimalSeen = 0;
+  int iterator;
+
+  for (iterator = 0; iterator < strlen(str); iterator++) {
+    if (str[iterator] == '.' && !decimalSeen) {
+      decimalSeen = 0;
+      continue;
+    }
+    else if (str[iterator] == '.' && decimalSeen) return 0;
+
+    if (!isdigit(str[iterator])) return 0;
+  }
+
+  return 1;
+}
+
 /* ERROR HANDLING */
 /* accepts either no arguments or 1 argument. */
 void throw(void (*printerFunction)(void*), ...){

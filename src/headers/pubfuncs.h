@@ -10,6 +10,7 @@ extern int *generateBoundedNumberOfIntegers(int numberOfIntegers, int lowerBound
 extern int *createEmptyList(int numberOfIntegers);
 extern void printIntegerList(int *list, int length);
 extern int validateStringIsInt(char*);
+extern int validateStringIsFloat(char*);
 extern void throw(void (*)(void*), ...);
 extern  void notImplementedError();
 extern void missingArgumentError(char*);

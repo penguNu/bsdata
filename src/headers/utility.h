@@ -4,6 +4,7 @@
 #include "shared.h"
 
 int validateStringIsInt(char*);
+int validateStringIsFloat(char*);
 
 void throw(void (*)(void*), ...); 
 
