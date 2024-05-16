@@ -44,3 +44,7 @@ test: build
 run: build
 	@echo "=================="
 	./$(BUILD_DIR)/debug/bsdata $(ARGS)
+
+install: release
+	mkdir -p /usr/local/bin
+	cp $(BUILD_DIR)/release/bsdata /usr/local/bin/bsdata
