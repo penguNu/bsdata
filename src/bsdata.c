@@ -6,7 +6,7 @@ void parseArgs(int argc, char **argv) {
   int iterator;
 
   /* state tracking */
-  byte dataTypeSelectedFlag = 0;
+  byte dataTypeSelectionFlags = 0;
 
   int *list;
   int listLength = DEFAULT_LIST_LENGTH; // unless specified in args, generate list of default length
@@ -21,31 +21,35 @@ void parseArgs(int argc, char **argv) {
     /* specify length of generated list */
     if (strcmp(argv[iterator], "-l") == 0 || strcmp(argv[iterator], "--length") == 0) {
       // if there are no more arguments then the user screwed up
-      if (iterator + 1 == argc) missingArgumentError(argv[iterator]);
+      if (iterator + 1 == argc) throw((void*)missingArgumentError, argv[iterator]);
+
+      if (!validateStringIsInt(argv[iterator+1])) 
+        throw((void*)invalidArgumentInputError, argv[iterator]);
 
       listLength = atoi(argv[iterator + 1]);
     }
+
   }
 
   // no data type selected, set the type to the default
-  dataTypeSelectedFlag = DEFAULT_DATA_TYPE;
+  dataTypeSelectionFlags = DEFAULT_DATA_TYPE;
   
-  if (dataTypeSelectedFlag == TYPE_INT) {
+  if (dataTypeSelectionFlags == TYPE_INT) {
     list = generateUnboundedNumberOfIntegers(listLength);
     printIntegerList(list, listLength);
     free(list);
   }
-  else if (dataTypeSelectedFlag == TYPE_FLOAT) {
+  else if (dataTypeSelectionFlags == TYPE_FLOAT) {
     throw(notImplementedError);
   }
-  else if (dataTypeSelectedFlag == TYPE_CHAR) {
+  else if (dataTypeSelectionFlags == TYPE_CHAR) {
     throw(notImplementedError);
   }
-  else if (dataTypeSelectedFlag == TYPE_STRING) {
+  else if (dataTypeSelectionFlags == TYPE_STRING) {
     throw(notImplementedError);
   }
   else {
-    throw((void*)invalidDataTypeFlagError, dataTypeSelectedFlag);
+    throw((void*)invalidDataTypeFlagError, dataTypeSelectionFlags);
   }
 
   return; 

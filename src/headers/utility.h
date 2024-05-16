@@ -3,10 +3,13 @@
 
 #include "shared.h"
 
-void throw(void (*printerFunction)(void*), ...);
+int validateStringIsInt(char*);
+
+void throw(void (*)(void*), ...); 
 
 void notImplementedError();
 void missingArgumentError(char*);
+void invalidArgumentInputError(char*);
 void invalidDataTypeFlagError(byte);
 
 void help();

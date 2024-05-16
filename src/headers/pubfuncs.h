@@ -9,9 +9,11 @@ extern int *generateLowerBoundedNumberOfIntegers(int numberOfIntegers, int bound
 extern int *generateBoundedNumberOfIntegers(int numberOfIntegers, int lowerBound, int upperBound);
 extern int *createEmptyList(int numberOfIntegers);
 extern void printIntegerList(int *list, int length);
-extern void throw(void (*printerFunction)(void*), ...);
-extern void notImplementedError();
+extern int validateStringIsInt(char*);
+extern void throw(void (*)(void*), ...);
+extern  void notImplementedError();
 extern void missingArgumentError(char*);
+extern void invalidArgumentInputError(char*);
 extern void invalidDataTypeFlagError(byte);
 extern void help();
 

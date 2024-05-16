@@ -1,21 +1,31 @@
 #include "utility.h"
-#include <stdarg.h>
 #include <stdlib.h>
+#include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
+
+/* STRING VALIDATION */
+int validateStringIsInt(char *str) {
+  int iterator;
+
+  for (iterator = 0; iterator < strlen(str); iterator++) {
+    if (!isdigit(str[iterator])) return 0;
+  }
+
+  return 1;
+}
 
 /* ERROR HANDLING */
-void throw(void (*printer)(void*), ...) {
+/* accepts either no arguments or 1 argument. */
+void throw(void (*printerFunction)(void*), ...){
   va_list ap;
 
-  va_start(ap, printer);
-  // only use one argument
-  printer(va_arg(ap, void*));
+  va_start(ap, printerFunction);
+  printerFunction(va_arg(ap, void*));
   va_end(ap);
 
   exit(1);
-   
-  return;
 }
 
 void notImplementedError() {
@@ -24,6 +34,10 @@ void notImplementedError() {
 
 void missingArgumentError(char *arg) {
   printf("Error: missing argument to %s\n", arg);
+}
+
+void invalidArgumentInputError(char *arg) {
+  printf("Error: argument %s received invalid input\n", arg);
 }
 
 void invalidDataTypeFlagError(byte dataTypeSelected) {
