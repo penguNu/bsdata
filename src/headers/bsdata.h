@@ -4,9 +4,6 @@
 #include "shared.h"
 #include "pubfuncs.h"
 
-/* TYPE DEFINITIONS */
-typedef unsigned char byte;
-
 /* DATA TYPE GENERATION FLAGS */
 /* These flags correspond to remembering which data type we're trying to generate. 
  */
