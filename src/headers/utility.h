@@ -3,14 +3,14 @@
 
 #include "shared.h"
 
-int validateStringIsInt(char*);
-int validateStringIsFloat(char*);
+int validateStringIsInt(char *);
+int validateStringIsFloat(char *);
 
-void throw(void (*)(void*), ...); 
+void throw (void (*)(void *), ...);
 
 void notImplementedError();
-void missingArgumentError(char*);
-void invalidArgumentInputError(char*);
+void missingArgumentError(char *);
+void invalidArgumentInputError(char *);
 void invalidDataTypeFlagError(byte);
 
 void help();

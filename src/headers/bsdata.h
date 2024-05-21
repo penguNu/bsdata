@@ -5,7 +5,7 @@
 #include "pubfuncs.h"
 
 /* DATA TYPE GENERATION FLAGS */
-/* These flags correspond to remembering which data type we're trying to generate. 
+/* These flags correspond to remembering which data type we're trying to generate.
  */
 #define TYPE_INT        (1 << 0)
 #define TYPE_FLOAT      (1 << 1)
@@ -14,7 +14,7 @@
 
 /* INT DATA TYPE FLAGS */
 /* These flags correspond to details for int generation, including whether a lower
- * bound exists, whether an upper bound exists, etc. 
+ * bound exists, whether an upper bound exists, etc.
  */
 #define INT_BOUND_UNBOUNDED     (1 << 0)
 #define INT_BOUND_LOWER         (1 << 1)
