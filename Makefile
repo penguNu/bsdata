@@ -49,10 +49,10 @@ install: release
 	mkdir -p /usr/local/bin
 	cp $(BUILD_DIR)/release/bsdata /usr/local/bin/bsdata
 
-format:
+dirtyformat:
 	astyle --project=./config/astylerc $(sources) $(headers)/*.h
 
-cleanfmt: format
+format: dirtyformat
 	$(foreach source,$(sources),rm -f $(source).orig &&) true
 	rm -f $(headers)/*.orig
 	
