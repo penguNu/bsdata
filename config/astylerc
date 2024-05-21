@@ -1,0 +1,40 @@
+# Options file for astyle
+# See https://astyle.sourceforge.net/astyle.html for list of options
+
+# braces style
+--style=google
+
+# indent with spaces, width = 2
+--indent=spaces=2
+
+# pad empty lines around header blocks (if, for, while, etc)
+--break-blocks
+
+# insert space padding around operators
+--pad-oper
+# insert space padding after commas
+--pad-comma
+# insert space padding between headers and following parens
+--pad-header
+
+# Remove extra whitespace
+--squeeze-ws
+
+# Align pointers and references (*, &) to the variable name
+--align-pointer=name
+--align-reference=name
+
+# Break one line headers
+--break-one-line-headers
+
+# Remove braces from one-line conditional statements
+--remove-braces
+
+# Attack the return type to the function name
+--attach-return-type
+
+# Set the max code length
+--max-code-length=120
+
+# Break line on logical condition (||, &&, etc)
+--break-after-logical
