@@ -4,11 +4,11 @@
 void printIntegerList(int *list, int length) {
   int iterator;
 
-  if (!list) return;
+  if (!list)
+    return;
 
-  for (iterator = 0; iterator < length; iterator++) {
+  for (iterator = 0; iterator < length; iterator++)
     printf("%d\n", list[iterator]);
-  }
 
   return;
 }

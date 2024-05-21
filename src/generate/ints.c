@@ -1,12 +1,14 @@
 #include "generate.h"
 #include <stdlib.h>
 
-int *generateUnboundedNumberOfIntegers(int numberOfIntegers) { 
-  int *list; 
+int *generateUnboundedNumberOfIntegers(int numberOfIntegers) {
+  int *list;
   int iterator;
 
   list = createEmptyList(numberOfIntegers);
-  if (!list) return NULL;
+
+  if (!list)
+    return NULL;
 
   for (iterator = 0; iterator < numberOfIntegers; iterator++)
     list[iterator] = rand();
@@ -15,19 +17,20 @@ int *generateUnboundedNumberOfIntegers(int numberOfIntegers) {
 }
 
 int *generateUpperBoundedNumberOfIntegers(int numberOfIntegers, int bound) {
-  int *list; 
+  int *list;
   int iterator;
   int randomNumber;
 
   list = createEmptyList(numberOfIntegers);
-  if (!list) return NULL;
+
+  if (!list)
+    return NULL;
 
   for (iterator = 0; iterator < numberOfIntegers; iterator++) {
     randomNumber = rand();
 
-    if (randomNumber > bound) {
+    if (randomNumber > bound)
       randomNumber = bound - (randomNumber - bound);
-    }
 
     list[iterator] = randomNumber;
   }
@@ -36,19 +39,20 @@ int *generateUpperBoundedNumberOfIntegers(int numberOfIntegers, int bound) {
 }
 
 int *generateLowerBoundedNumberOfIntegers(int numberOfIntegers, int bound) {
-  int *list; 
+  int *list;
   int iterator;
   int randomNumber;
 
   list = createEmptyList(numberOfIntegers);
-  if (!list) return NULL;
+
+  if (!list)
+    return NULL;
 
   for (iterator = 0; iterator < numberOfIntegers; iterator++) {
     randomNumber = rand();
 
-    if (randomNumber < bound) {
+    if (randomNumber < bound)
       randomNumber = bound + (bound - randomNumber);
-    }
 
     list[iterator] = randomNumber;
   }
