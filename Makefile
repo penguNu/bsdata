@@ -12,8 +12,8 @@ sources = src/*.c src/generate/*.c src/output/*.c
 default: build
 
 pubfuncsLength := $(shell wc -l < $(headers)/pubfuncs.h)
-headerFunctions := $(shell grep --exclude=$(headers)/pubfuncs.h -iEh '[*]*[a-z]+[A-Za-z]*\(.*\);' $(headers)/*)
-startPoint := 5
+headerFunctions := $(shell grep --exclude=$(headers)/pubfuncs.h -iEh '[*]*[a-z]+[A-Za-z]* *\(.*\);' $(headers)/*)
+startPoint := 8
 endPoint := $(shell echo $$(( $(pubfuncsLength) - 2 )))
 
 refreshPublicFunctionList: 
@@ -50,8 +50,9 @@ install: release
 	cp $(BUILD_DIR)/release/bsdata /usr/local/bin/bsdata
 
 format:
-	astyle --project=./config/astylerc $(sources)
+	astyle --project=./config/astylerc $(sources) $(headers)/*.h
 
 cleanfmt: format
 	$(foreach source,$(sources),rm -f $(source).orig &&) true
+	rm -f $(headers)/*.orig
 	
