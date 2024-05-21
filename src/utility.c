@@ -10,7 +10,8 @@ int validateStringIsInt(char *str) {
   int iterator;
 
   for (iterator = 0; iterator < strlen(str); iterator++) {
-    if (!isdigit(str[iterator])) return 0;
+    if (!isdigit(str[iterator]))
+      return 0;
   }
 
   return 1;
@@ -24,10 +25,11 @@ int validateStringIsFloat(char *str) {
     if (str[iterator] == '.' && !decimalSeen) {
       decimalSeen = 0;
       continue;
-    }
-    else if (str[iterator] == '.' && decimalSeen) return 0;
+    } else if (str[iterator] == '.' && decimalSeen)
+      return 0;
 
-    if (!isdigit(str[iterator])) return 0;
+    if (!isdigit(str[iterator]))
+      return 0;
   }
 
   return 1;
@@ -35,11 +37,11 @@ int validateStringIsFloat(char *str) {
 
 /* ERROR HANDLING */
 /* accepts either no arguments or 1 argument. */
-void throw(void (*printerFunction)(void*), ...){
+void throw (void (*printerFunction)(void *), ...) {
   va_list ap;
 
   va_start(ap, printerFunction);
-  printerFunction(va_arg(ap, void*));
+  printerFunction(va_arg(ap, void *));
   va_end(ap);
 
   exit(1);
