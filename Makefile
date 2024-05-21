@@ -48,3 +48,10 @@ run: build
 install: release
 	mkdir -p /usr/local/bin
 	cp $(BUILD_DIR)/release/bsdata /usr/local/bin/bsdata
+
+format:
+	astyle --project=./config/astylerc $(sources)
+
+cleanfmt: format
+	$(foreach source,$(sources),rm -f $(source).orig &&) true
+	
