@@ -1,5 +1,18 @@
 #include "generate.h"
 #include <stdlib.h>
+#include <stdint.h>
+#include <math.h>
+
+uint32_t _rand() {
+  unsigned int squaredNum = pow(seedNumber, 2);
+
+  seedNumber++;
+
+  int returnValue = squaredNum << 4;
+  returnValue = returnValue >> 8; 
+  
+  return (uint32_t) returnValue;
+}
 
 int *generateUnboundedNumberOfIntegers(int numberOfIntegers) {
   int *list;
@@ -11,7 +24,7 @@ int *generateUnboundedNumberOfIntegers(int numberOfIntegers) {
     return NULL;
 
   for (iterator = 0; iterator < numberOfIntegers; iterator++)
-    list[iterator] = rand();
+    list[iterator] = _rand();
 
   return list;
 }
@@ -62,6 +75,7 @@ int *generateLowerBoundedNumberOfIntegers(int numberOfIntegers, int bound) {
 
 /* nothing below here is implemented yet */
 
-int *generateBoundedNumberOfIntegers(int numberOfIntegers, int lowerBound, int upperBound) {
+int *generateBoundedNumberOfIntegers(int numberOfIntegers, int lowerBound,
+                                     int upperBound) {
   return NULL;
 }
