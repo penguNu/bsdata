@@ -26,7 +26,7 @@ refreshPublicFunctionList:
 
 build: refreshPublicFunctionList
 	mkdir -p $(BUILD_DIR)/debug
-	$(COMPILER) -I$(headers) $(OPTIMIZATION) -Wall -o $(BUILD_DIR)/debug/bsdata $(sources)
+	$(COMPILER) -I$(headers) $(OPTIMIZATION) -Wall -o $(BUILD_DIR)/debug/bsdata $(sources) -lm
 
 clean:
 	rm -f $(BUILD_DIR)/debug/*
